@@ -9,7 +9,7 @@
 import textToSpeech from '@google-cloud/text-to-speech';
 import type { protos } from '@google-cloud/text-to-speech';
 
-let cachedClient: ReturnType<
+let cachedClient: InstanceType<
   typeof textToSpeech.TextToSpeechClient
 > | null = null;
 
