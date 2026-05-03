@@ -28,9 +28,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ audio: result.audioContent, mimeType: result.mimeType });
   } catch (err) {
     console.error('[tts] error:', err);
-    return NextResponse.json(
-      { error: err instanceof Error ? err.message : 'TTS failed' },
-      { status: 500 },
-    );
+    return NextResponse.json({ error: 'Unable to synthesize speech.' }, { status: 500 });
   }
 }

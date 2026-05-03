@@ -29,6 +29,11 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing audio file' }, { status: 400 });
     }
 
+    const MAX_AUDIO_BYTES = 10 * 1024 * 1024; // 10 MB
+    if (audio.size > MAX_AUDIO_BYTES) {
+      return NextResponse.json({ error: 'Audio file too large' }, { status: 413 });
+    }
+
     const locale: SttLocale = localeRaw === 'hi' ? 'hi' : 'en';
     const buffer = Buffer.from(await audio.arrayBuffer());
     const base64 = buffer.toString('base64');
@@ -43,9 +48,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ transcript });
   } catch (err) {
     console.error('[stt] error:', err);
-    return NextResponse.json(
-      { error: err instanceof Error ? err.message : 'STT failed' },
-      { status: 500 },
-    );
+    return NextResponse.json({ error: 'Unable to transcribe audio.' }, { status: 500 });
   }
 }

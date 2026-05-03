@@ -82,9 +82,8 @@ export async function POST(req: NextRequest) {
         send('done', '');
         controller.close();
       } catch (err) {
-        const msg = err instanceof Error ? err.message : 'Unknown error';
         console.error('[chat] error:', err);
-        send('error', msg);
+        send('error', 'Unable to process your question. Please try again.');
         controller.close();
       }
     },

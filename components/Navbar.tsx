@@ -6,6 +6,10 @@ import { Vote } from 'lucide-react';
 import { useLanguage } from '@/lib/i18n/LanguageProvider';
 import { LanguageToggle } from './LanguageToggle';
 
+function isActive(href: string, pathname: string | null): boolean {
+  return href === '/' ? pathname === '/' : (pathname?.startsWith(href) ?? false);
+}
+
 export function Navbar() {
   const { t, locale } = useLanguage();
   const pathname = usePathname();
@@ -33,10 +37,7 @@ export function Navbar() {
 
         <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">
           {links.map((link) => {
-            const active =
-              link.href === '/'
-                ? pathname === '/'
-                : pathname?.startsWith(link.href);
+            const active = isActive(link.href, pathname);
             return (
               <Link
                 key={link.href}
@@ -64,8 +65,7 @@ export function Navbar() {
         className="flex gap-1 overflow-x-auto border-t border-ink-200 px-4 py-2 md:hidden"
       >
         {links.map((link) => {
-          const active =
-            link.href === '/' ? pathname === '/' : pathname?.startsWith(link.href);
+          const active = isActive(link.href, pathname);
           return (
             <Link
               key={link.href}

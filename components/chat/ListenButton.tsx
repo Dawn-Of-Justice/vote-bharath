@@ -55,6 +55,7 @@ export function ListenButton({ text, locale, ariaLabel, stopLabel }: Props) {
       type="button"
       onClick={play}
       aria-label={state === 'playing' ? stopLabel : ariaLabel}
+      aria-busy={state === 'loading'}
       title={state === 'playing' ? stopLabel : ariaLabel}
       className="inline-flex items-center justify-center rounded-md p-1.5 text-ink-600 transition-colors hover:bg-ink-100 hover:text-ink-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-saffron-500"
     >

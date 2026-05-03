@@ -9,6 +9,10 @@
 import { useCallback, useRef, useState } from 'react';
 import type { Locale } from '@/lib/i18n/strings';
 
+const SSE_DELIMITER = '\n\n';
+const EVENT_PREFIX = 'event: ';
+const DATA_PREFIX = 'data: ';
+
 export interface ChatSource {
   title: string;
   topic: string;
@@ -78,17 +82,17 @@ export function useChat(locale: Locale) {
           buffer += decoder.decode(value, { stream: true });
 
           // SSE messages are separated by blank lines
-          const events = buffer.split('\n\n');
+          const events = buffer.split(SSE_DELIMITER);
           buffer = events.pop() ?? '';
 
           for (const evt of events) {
             const lines = evt.split('\n');
-            const eventLine = lines.find((l) => l.startsWith('event: '));
-            const dataLine = lines.find((l) => l.startsWith('data: '));
+            const eventLine = lines.find((l) => l.startsWith(EVENT_PREFIX));
+            const dataLine = lines.find((l) => l.startsWith(DATA_PREFIX));
             if (!eventLine || !dataLine) continue;
 
-            const eventType = eventLine.slice(7).trim();
-            const data = dataLine.slice(6);
+            const eventType = eventLine.slice(EVENT_PREFIX.length).trim();
+            const data = dataLine.slice(DATA_PREFIX.length);
 
             if (eventType === 'sources') {
               try {
@@ -99,7 +103,9 @@ export function useChat(locale: Locale) {
                   ),
                 );
               } catch {
-                /* ignore malformed source frame */
+                if (process.env.NODE_ENV === 'development') {
+                  console.warn('[chat] malformed sources frame:', data);
+                }
               }
             } else if (eventType === 'chunk') {
               setMessages((prev) =>
