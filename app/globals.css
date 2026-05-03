@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Load Devanagari font for Hindi rendering */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+
+:root {
+  --background: 248 250 252;
+  --foreground: 15 23 42;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+  font-feature-settings: 'rlig' 1, 'calt' 1;
+}
+
+/* Hindi text auto-applies the Devanagari font */
+[lang='hi'] {
+  font-family: 'Noto Sans Devanagari', system-ui, sans-serif;
+  line-height: 1.7;
+}
+
+/* Accessibility: make focus rings clearly visible */
+*:focus-visible {
+  outline: 2px solid #f97316;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Honor user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Custom scrollbar for the timeline horizontal scroll */
+.timeline-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+.timeline-scroll::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+.timeline-scroll::-webkit-scrollbar-thumb {
+  background: #fb923c;
+  border-radius: 4px;
+}
