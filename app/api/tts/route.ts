@@ -5,6 +5,8 @@
  *   → { audio: base64 mp3, mimeType: 'audio/mpeg' }
  */
 
+export const dynamic = 'force-dynamic';
+
 import { NextRequest, NextResponse } from 'next/server';
 import { synthesizeSpeech, type TtsLocale } from '@/lib/gcp/tts';
 

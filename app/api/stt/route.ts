@@ -12,6 +12,8 @@
  * WEBM_OPUS as the safer default.
  */
 
+export const dynamic = 'force-dynamic';
+
 import { NextRequest, NextResponse } from 'next/server';
 import { transcribeAudio, type SttLocale } from '@/lib/gcp/stt';
 
