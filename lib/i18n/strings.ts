@@ -72,7 +72,15 @@ export const en = {
   },
 } as const;
 
-export type Strings = typeof en;
+type StringShape<T> = {
+  [K in keyof T]: T[K] extends readonly string[]
+    ? readonly string[]
+    : T[K] extends object
+      ? StringShape<T[K]>
+      : string;
+};
+
+export type Strings = StringShape<typeof en>;
 
 export const hi: Strings = {
   nav: {
