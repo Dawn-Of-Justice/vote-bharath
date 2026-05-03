@@ -14,8 +14,6 @@
  * while the answer is still being generated.
  */
 
-export const dynamic = 'force-dynamic';
-
 import { NextRequest } from 'next/server';
 import { embedText } from '@/lib/gcp/vertex';
 import { findSimilarChunks, type KbChunk } from '@/lib/gcp/firestore';
