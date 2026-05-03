@@ -9,7 +9,7 @@
 import speech from '@google-cloud/speech';
 import type { protos } from '@google-cloud/speech';
 
-let cachedClient: ReturnType<typeof speech.SpeechClient> | null = null;
+let cachedClient: InstanceType<typeof speech.SpeechClient> | null = null;
 
 function getClient() {
   if (!cachedClient) {
