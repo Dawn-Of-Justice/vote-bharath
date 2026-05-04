@@ -1,7 +1,7 @@
 ---
 title: Model Code of Conduct
 topic: rules
-sourceUrl: https://eci.gov.in/mcc/
+sourceUrl: https://www.eci.gov.in/mcc
 ---
 
 # Model Code of Conduct (MCC)

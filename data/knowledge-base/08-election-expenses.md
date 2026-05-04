@@ -1,7 +1,7 @@
 ---
 title: Election Expenses and Funding
 topic: campaign-finance
-sourceUrl: https://eci.gov.in/eeps/
+sourceUrl: https://www.eci.gov.in/expenditure-monitoring
 ---
 
 # Election Expenses and Campaign Finance

@@ -1,7 +1,7 @@
 ---
 title: Voter Rights and Protections
 topic: rights
-sourceUrl: https://eci.gov.in/voter/voter/
+sourceUrl: https://voters.eci.gov.in/
 ---
 
 # Voter Rights and Protections

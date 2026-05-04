@@ -1,7 +1,7 @@
 ---
 title: Postal Ballot and Special Voters
 topic: special-voting
-sourceUrl: https://eci.gov.in/voter/special-voters/
+sourceUrl: https://www.eci.gov.in/etpbs
 ---
 
 # Postal Ballot and Special Voters

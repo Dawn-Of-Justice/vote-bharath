@@ -1,7 +1,7 @@
 ---
 title: NOTA — None Of The Above
 topic: voting-options
-sourceUrl: https://eci.gov.in/voter/voter/
+sourceUrl: https://voters.eci.gov.in/
 ---
 
 # NOTA — None Of The Above

@@ -1,7 +1,7 @@
 ---
 title: EPIC and Acceptable ID Proofs
 topic: identification
-sourceUrl: https://eci.gov.in/voter/voter/
+sourceUrl: https://voters.eci.gov.in/
 ---
 
 # EPIC Card and Accepted Identity Documents

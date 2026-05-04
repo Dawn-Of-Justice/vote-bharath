@@ -1,7 +1,7 @@
 ---
 title: Voter Registration in India
 topic: registration
-sourceUrl: https://eci.gov.in/voter/voter/
+sourceUrl: https://voters.eci.gov.in/
 ---
 
 # Voter Registration

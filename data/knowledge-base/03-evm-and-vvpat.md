@@ -1,7 +1,7 @@
 ---
 title: EVM and VVPAT
 topic: voting-machines
-sourceUrl: https://eci.gov.in/evm/
+sourceUrl: https://www.eci.gov.in/evm-vvpat
 ---
 
 # Electronic Voting Machine (EVM) and VVPAT

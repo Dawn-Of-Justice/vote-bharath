@@ -1,7 +1,7 @@
 ---
 title: Role of the Election Commission of India
 topic: institutions
-sourceUrl: https://eci.gov.in/about/about-eci/
+sourceUrl: https://www.eci.gov.in/
 ---
 
 # The Election Commission of India
